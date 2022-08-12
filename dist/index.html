@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+
+</head>
+<body>
+    <style id="htmlApp"></style>
+    <div id="textApp"></div>
+    <div id="buttons">
+        <button id="buttonPause">暂停</button>
+        <button id="buttonPlay">开始</button>
+        <button id="buttonSlow">慢速</button>
+        <button id="buttonNormal">中速</button>
+        <button id="buttonFast">快速</button>
+    </div>
+    
+    <style>#buttons{
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        margin-right: 20px;
+        width: 100px;
+    }
+    #buttons>button{
+        margin-bottom: 30px;
+    }
+         #htmlApp{
+        display: none;
+    }
+    #textApp{
+        width: 100%;
+        height: 50vh;
+        overflow-y: auto;
+    }
+    #textApp::-webkit-scrollbar{
+        display: none;
+    }
+    #htmlApp{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50vh;
+    }</style>
+
+    <h1 style="text-align: center;">哆啦A梦</h1>
+    <div id="app">
+        <header class="header">
+            <!-- 竹蜻蜓 -->
+            <div class="fly">
+                <diV class="turn"></diV></div>
+                <div class="up">
+                    <div class="down"></div>
+                </div>
+            </header></div>
+            <!-- 头 -->
+            <div class="big_head">
+                <ul class="left_beards">
+                    <li><div class="left_beard1"></div></li>
+                    <li><div class="left_beard2"></div></li>
+                    <li><div class="left_beard3"></div></li>
+                </ul>
+                <ul class="right_beards">
+                    <li><div class="right_beard1"></div></li>
+                    <li><div class="right_beard2"></div></li>
+                    <li><div class="right_beard3"></div></li>
+                </ul>
+
+                <div class="face">
+                    <ul class="eyes">
+                        <li>
+                            <div class="left_eye">
+                                <div class="left_eyeball"> </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="right_empty"></div>
+                            <div class="right_eye">
+                                <div class="right_eyeball">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="noise">
+                        <div class="noise_white"></div>
+                    </div>
+                    <div class="centre_beard"></div>
+                    <div class="mouth">
+                        <ul class="mouth_in"></ul>
+                    </div>
+                </div>
+
+            </div>
+        
+        <!-- 身体 -->
+        <main class="main">
+            <div class="scarf"></div>
+            <div class="bell">
+                <div class="bell_up"></div>
+                <div class="bell_down"></div>
+            </div>
+            <div class="pocket_cloth">
+                <div class="pocket"></div>
+            </div>
+            <ul class="arm">
+                <li>
+                    <div class="elbow_left">
+                        <div class="hand_left"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="elbow_right">
+                        <div class="hand_right"></div>
+                    </div>
+                </li>
+            </ul>
+        </main>
+        <!-- 腿 -->
+        <footer class="footer">
+            <ul class="leg">
+                <li><div class="leg_left"></div></li>
+                <li><div class="leg_right"></div></li>
+            </ul>
+        </footer>
+    
+    <style>* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+}
+body {background: #D4ECF9}
+.big_head{
+    width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	margin: 0 auto;
+	position: relative;
+    z-index: 100;
+    overflow: hidden;
+}
+.face{
+    width: 170px;
+	height: 170px;
+	border-radius: 100%;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    margin-top: -85px;
+    margin-left: -85px;
+}
+.eyes{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.left_beard1,
+.left_beard2,
+.left_beard3,
+.right_beard1,
+.right_beard2,
+.right_beard3 {
+    width: 60px;
+    height: 2px;
+}
+.left_beards,
+.right_beards{
+    z-index: 9999;
+    position: relative;
+    display: inline-block;
+    top: 59px;
+}
+.right_eye,
+.left_eye{
+    width: 23px;
+    height: 15px;
+    border-radius: 100%;
+    transform: rotate(90deg);
+    position: absolute;
+    top: 20px;
+}
+.left_eyeball,
+.right_eyeball{
+    width: 6px;
+    height: 3px;
+    border-radius: 100%;
+    transform: rotate(180deg);
+    position: absolute; 
+}
+.right_empty{
+    width: 48px;
+    height: 48px;
+    position: relative;
+    overflow: hidden;
+    z-index: 100;
+    animation: pulse 2s infinite;
+}
+
+  .noise{
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    margin: 0 auto;
+    position: relative;
+    top: -8px;    
+  }
+  .noise_white{
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    position: absolute;
+    top: 6px;
+    left: 8px;
+  }
+  .centre_beard{
+    width: 2px;
+    height: 20px;
+    margin: 0 auto;
+    position: relative;
+    top: -8px; 
+  }
+  .mouth{
+    width: 140px; 
+    height: 70px; 
+    border-radius: 140px 140px 0 0;
+    overflow: hidden;
+    position: relative;
+    left:13px;
+    top: -10px;
+    transform: rotate(180deg);
+}
+  .mouth_in{
+    position: relative;
+    width: 100px;
+    height: 90px;
+    margin: 0 auto;
+    top: -50px;
+    transform: rotate(180deg);   
+}
+  .mouth_in::before,.mouth_in::after{
+    content: "";
+    position: absolute;
+    left: 50px;
+    top:0;
+    width: 50px;
+    display: block;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg); 
+    transform-origin: 0 100%;  
+}
+  .mouth_in::after{
+    left: 0;
+    transform: rotate(45deg);   
+    transform-origin: 100% 100%;   
+}
+  .main{
+    width: 142px;
+    height: 172px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    margin: 0 auto;
+    position: relative;
+    top: -100px;
+    z-index: 2;
+}
+  .scarf{
+    width: 100px;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 100px / 50px; 
+    position: relative;
+    top: 55px;
+    z-index: 2;
+}
+  .bell{
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    position: absolute;
+    top: 96px;
+    left: 52px;
+    z-index: 3;
+}
+  .bell_up{
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    position: absolute;
+    top: 10px;
+    left: 12px;
+}
+.bell_down{
+   width: 2px;
+   height: 15px;
+   margin: 0 auto;
+   transform: rotate(180deg);
+   position: relative;
+   top: 18px;
+   left: .5px;
+}
+  .pocket_cloth{
+    width: 100px;
+    height: 60px;
+    margin: 0 auto;
+    border-radius: 100px / 60px;
+    position: relative;
+    top: 40px;
+}
+  .pocket{
+    width: 60px; 
+    height: 30px; 
+    border-radius: 60px 60px 0 0;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    margin-left: -30px;
+    z-index: 2;
+    transform: rotate(180deg);
+}
+  .arm{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.elbow_left,
+.elbow_right{
+    width: 55px;
+   height: 85px;
+   border-radius: 55px / 85px;
+   position: relative;
+   top: -90px;
+}
+.hand_left,
+.hand_right{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    position: absolute;
+    top: -35px;
+}
+.leg{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    bottom: 150px;
+}
+.leg_left,
+.leg_right{
+   width: 55px;
+   height: 77px;
+   border-radius: 55px / 77px;
+   transform: rotate(180deg);
+}</style>
+        <script src="main.eb3c4ff4.js"></script>
+</body>
+</html>
